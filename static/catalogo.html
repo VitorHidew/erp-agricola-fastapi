@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo da Agricultura Familiar</title>
+  <link rel="stylesheet" href="/static/styles/catalogo.css">
+</head>
+<body>
+  <header class="catalog-header">
+    <div class="header-inner">
+      <strong>Catálogo Agrícola</strong>
+      <button type="button" class="cart-button" id="open-cart" aria-label="Abrir cesta">
+        Minha cesta <span id="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p class="eyebrow">Venda direta do produtor</p>
+      <h1 id="farm-name">Feira da Agricultura Familiar</h1>
+      <p>Produtos frescos, origem próxima e renda que fica na comunidade.</p>
+    </section>
+
+    <section class="catalog-tools" aria-label="Filtros do catálogo">
+      <input id="catalog-search" type="search" placeholder="Buscar produto" aria-label="Buscar produto">
+      <select id="catalog-category" aria-label="Filtrar por categoria">
+        <option value="">Todas as categorias</option>
+        <option>Hortaliças</option>
+        <option>Frutas</option>
+        <option>Legumes</option>
+        <option>Grãos</option>
+        <option>Ovos e laticínios</option>
+        <option>Processados</option>
+      </select>
+    </section>
+
+    <section class="product-grid" id="product-grid" aria-live="polite"></section>
+  </main>
+
+  <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-labelledby="cart-title" aria-hidden="true">
+    <div class="cart-head">
+      <h2 id="cart-title">Minha cesta</h2>
+      <button type="button" class="icon-button" id="close-cart" aria-label="Fechar cesta">×</button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Total estimado</span><strong id="cart-total">R$ 0,00</strong></div>
+      <p id="pix-info" class="pix-info" hidden></p>
+      <button type="button" class="checkout-button" id="checkout">Enviar pedido pelo WhatsApp</button>
+      <p class="checkout-note">O envio abre uma conversa para combinar pagamento, retirada ou entrega.</p>
+    </div>
+  </aside>
+
+  <div class="catalog-toast" id="catalog-toast" role="status" aria-live="polite"></div>
+  <script type="module" src="/static/js/catalogo.js"></script>
+</body>
+</html>
+
